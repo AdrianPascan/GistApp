@@ -1,4 +1,4 @@
-export class File {
+export class GistFile {
   filename: string;
   type: string;
   language: string;

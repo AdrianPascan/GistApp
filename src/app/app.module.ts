@@ -15,6 +15,8 @@ import {MatInputModule} from '@angular/material/input';
 import {HttpClientModule} from '@angular/common/http';
 import {MatCardModule} from '@angular/material/card';
 import {GistPreviewComponent} from './gist-preview/gist-preview.component';
+import {GistFilePreviewComponent} from './gist-file-preview/gist-file-preview.component';
+import {MatChipsModule} from '@angular/material/chips';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import {GistPreviewComponent} from './gist-preview/gist-preview.component';
     GistsComponent,
     HeaderComponent,
     GistSearchComponent,
-    GistPreviewComponent
+    GistPreviewComponent,
+    GistFilePreviewComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +37,8 @@ import {GistPreviewComponent} from './gist-preview/gist-preview.component';
     FormsModule,
     MatInputModule,
     HttpClientModule,
-    MatCardModule
+    MatCardModule,
+    MatChipsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

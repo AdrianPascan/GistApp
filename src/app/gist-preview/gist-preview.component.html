@@ -2,4 +2,5 @@
   <h3>Gist {{gist.id}}</h3>
   <div>{{gist.description ? gist.description : 'no description'}}</div>
   <div>{{gist.comments != 0 ? gist.comments : 'no'}} comments</div>
+  <app-gist-file-preview [files]="getFiles()"></app-gist-file-preview>
 </mat-card>

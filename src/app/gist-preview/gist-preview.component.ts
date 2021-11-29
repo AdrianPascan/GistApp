@@ -1,5 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Gist} from '../model/gist';
+import {GistFile} from '../model/gist-file';
+import {flatMap} from '../utils/utils';
 
 @Component({
   selector: 'app-gist-preview',
@@ -13,6 +15,10 @@ export class GistPreviewComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  getFiles(): GistFile[] {
+    return Object.values(this.gist.files).reduce(flatMap, []);
   }
 
 }

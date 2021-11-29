@@ -1,5 +1,5 @@
 import {User} from './user';
-import {File} from './file';
+import {GistFile} from './gist-file';
 
 export class Gist {
   url: string;
@@ -10,7 +10,7 @@ export class Gist {
   git_pull_url: string;
   git_push_url: string;
   html_url: string;
-  files: Map<string, File>;
+  files: Map<string, GistFile>;
   public: boolean;
   created_at: Date;
   updated_at: Date;
