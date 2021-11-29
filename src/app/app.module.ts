@@ -17,6 +17,7 @@ import {MatCardModule} from '@angular/material/card';
 import {GistPreviewComponent} from './gist-preview/gist-preview.component';
 import {GistFilePreviewComponent} from './gist-file-preview/gist-file-preview.component';
 import {MatChipsModule} from '@angular/material/chips';
+import {GistForkPreviewComponent} from './gist-fork-preview/gist-fork-preview.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import {MatChipsModule} from '@angular/material/chips';
     HeaderComponent,
     GistSearchComponent,
     GistPreviewComponent,
-    GistFilePreviewComponent
+    GistFilePreviewComponent,
+    GistForkPreviewComponent
   ],
   imports: [
     BrowserModule,

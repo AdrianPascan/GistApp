@@ -3,4 +3,5 @@
   <div>{{gist.description ? gist.description : 'no description'}}</div>
   <div>{{gist.comments != 0 ? gist.comments : 'no'}} comments</div>
   <app-gist-file-preview [files]="getFiles()"></app-gist-file-preview>
+  <app-gist-fork-preview [id]="gist.id"></app-gist-fork-preview>
 </mat-card>

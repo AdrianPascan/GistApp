@@ -1,0 +1,8 @@
+<ng-container *ngIf="isArrayEmpty(forks)">
+  <div>no forks</div>
+</ng-container>
+<ng-container *ngIf="isArrayNotEmpty(forks)">
+  <mat-chip-list *ngFor="let fork of forks">
+    <mat-chip>{{fork.owner.login}}</mat-chip>
+  </mat-chip-list>
+</ng-container>
