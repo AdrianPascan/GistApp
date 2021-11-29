@@ -1,16 +1,43 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 
-import { AppComponent } from './app.component';
+import {AppComponent} from './app.component';
+import {GistsComponent} from './gists/gists.component';
+import {AppRoutingModule} from './app-routing.module';
+import {HeaderComponent} from './header/header.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatIconModule} from '@angular/material/icon';
+import {FormsModule} from '@angular/forms';
+import {GistSearchComponent} from './gist-search/gist-search.component';
+import {MatInputModule} from '@angular/material/input';
+import {HttpClientModule} from '@angular/common/http';
+import {MatCardModule} from '@angular/material/card';
+import {GistPreviewComponent} from './gist-preview/gist-preview.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    GistsComponent,
+    HeaderComponent,
+    GistSearchComponent,
+    GistPreviewComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule,
+    MatToolbarModule,
+    BrowserAnimationsModule,
+    MatFormFieldModule,
+    MatIconModule,
+    FormsModule,
+    MatInputModule,
+    HttpClientModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

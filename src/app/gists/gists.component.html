@@ -1,0 +1,4 @@
+<app-gist-search (usernameChange)="getGistsForUser($event)"></app-gist-search>
+<ng-container *ngFor="let gist of gists">
+  <app-gist-preview [gist]="gist"></app-gist-preview>
+</ng-container>
