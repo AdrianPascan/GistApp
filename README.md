@@ -1,27 +1,36 @@
-# GistApp
+# GISTER
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.3.
+Web application for showing gists exposed by the [GitHub Gist API](https://docs.github.com/en/rest/reference/gists). 
 
-## Development server
+SPA built with Angular and using Bootstrap & Angular Material. 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### Description
 
-## Code scaffolding
+The app has two routes, a main one and a secondary one.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+**Main route:**
+- search for gists by username;
+- retrieve gists per page;
+- show gists as cards;
+- each gist card has 'Gist <gist_id>' as title;
+- for each gist card, show plain details like description, no. of comments, etc;
+- for each gist card, show the file types as tags;
+- for each gist card, show the usernames of the last 3 forks users;
+- for each gist card, navigate to the secondary route on click;
+- switch between pages - next/prev page (if possible);
+- select no. of gists per page.
 
-## Build
+**Secondary route:**
+- show files as cards for a gist;
+- for each file card, have filename as title and then the file content as content.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+### A list of possible improvements
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- styling by using more CSS and Bootstrap;
+- for each gist card, divide the info into sections;
+- for each gist card, show only unique file types;
+- for each gist card, show the last 3 forks users as a list of usernames or username+avatar pairs;
+- for each file card, add padding on file content;
+- for each file card, keep the newlines of file content;
+- add back button on the secondary route in order to navigate back to the main route;
+- etc.
