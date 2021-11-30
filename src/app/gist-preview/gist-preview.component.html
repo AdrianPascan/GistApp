@@ -1,9 +1,11 @@
-<mat-card (click)="navigateToGistFiles()">
-  <h3>Gist {{gist.id}}</h3>
-  <div>{{gist.description ? gist.description : 'no description'}}</div>
-  <div>{{gist.comments != 0 ? gist.comments : 'no'}} comments</div>
-  <app-gist-file-preview [files]="getFiles()"></app-gist-file-preview>
-  <app-gist-fork-preview [id]="gist.id"></app-gist-fork-preview>
-  <div>Date created: {{gist.created_at | date:'short'}}</div>
-  <div>Date updated: {{gist.updated_at | date:'short'}}</div>
-</mat-card>
+<div class="card">
+  <mat-card (click)="navigateToGistFiles()">
+    <h3>Gist {{gist.id}}</h3>
+    <div>{{gist.description ? gist.description : 'no description'}}</div>
+    <div>{{gist.comments != 0 ? gist.comments : 'no'}} comments</div>
+    <app-gist-file-preview [files]="getFiles()"></app-gist-file-preview>
+    <app-gist-fork-preview [id]="gist.id"></app-gist-fork-preview>
+    <div>Date created: {{gist.created_at | date:'short'}}</div>
+    <div>Date updated: {{gist.updated_at | date:'short'}}</div>
+  </mat-card>
+</div>

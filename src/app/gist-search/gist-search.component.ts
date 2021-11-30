@@ -27,7 +27,7 @@ export class GistSearchComponent implements OnInit {
 
   onClearUsername(): void {
     this.username = null;
-    this.usernameChange.emit(this.username);
+    this.usernameChange.emit(null);
   }
 
 }

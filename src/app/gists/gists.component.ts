@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {GistService} from '../service/gist.service';
 import {Gist} from '../model/gist';
-import {isArrayNotEmpty} from '../utils/utils';
+import {isArrayEmpty, isArrayNotEmpty, isDefined} from '../utils/utils';
 
 @Component({
   selector: 'app-gists',
@@ -10,12 +10,17 @@ import {isArrayNotEmpty} from '../utils/utils';
 })
 export class GistsComponent implements OnInit {
 
+  readonly isDefined = isDefined;
+  readonly isArrayEmpty = isArrayEmpty;
+  readonly isArrayNotEmpty = isArrayNotEmpty;
+
   username: string;
   gists: Gist[];
   page = 1;
   perPage = 10;
   prevPage = false;
   nextPage = false;
+  perPageOptions: number[] = [5, 10, 25, 50, 100];
 
   constructor(private readonly gistService: GistService) {
   }
@@ -25,8 +30,8 @@ export class GistsComponent implements OnInit {
 
   getGistsForUser(username: string): void {
     this.page = 1;
+    this.username = username;
     if (username) {
-      this.username = username;
       this.gistService.getGistsPageForUser(this.username, this.page, this.perPage)
         .subscribe(gists => {
           this.gists = gists;
@@ -79,5 +84,17 @@ export class GistsComponent implements OnInit {
 
   private hasNextPage(): void {
     this.nextPage = isArrayNotEmpty(this.gists) && this.gists.length === this.perPage;
+  }
+
+  onPerPageChange(perPage: number): void {
+    this.page = 1;
+    this.perPage = perPage;
+    if (this.username) {
+      this.gistService.getGistsPageForUser(this.username, this.page, this.perPage)
+        .subscribe(gists => {
+          this.gists = gists;
+          this.canSwitchPages();
+        });
+    }
   }
 }

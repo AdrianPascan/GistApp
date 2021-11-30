@@ -1,6 +1,13 @@
 <app-gist-search (usernameChange)="getGistsForUser($event)"></app-gist-search>
-<ng-container *ngFor="let gist of gists">
-  <app-gist-preview [gist]="gist"></app-gist-preview>
+<ng-container *ngIf="isDefined(username) && isArrayEmpty(gists)">
+  <mat-card>
+    No gists for user {{username}}.
+  </mat-card>
+</ng-container>
+<ng-container *ngIf="isArrayNotEmpty">
+  <div *ngFor="let gist of gists">
+    <app-gist-preview [gist]="gist"></app-gist-preview>
+  </div>
 </ng-container>
 <div>
   <button mat-fab color="primary" [disabled]="!prevPage" (click)="getPrevPage()">
@@ -10,3 +17,13 @@
     <mat-icon>navigate_next</mat-icon>
   </button>
 </div>
+<mat-form-field appearance="fill">
+  <mat-label>Items per page</mat-label>
+  <mat-select>
+    <mat-option *ngFor="let perPageOption of perPageOptions"
+                [value]="perPage"
+                (onSelectionChange)="onPerPageChange(perPageOption)">
+      {{perPageOption}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
