@@ -1,4 +1,7 @@
 <mat-form-field appearance="standard">
   <mat-label>Username</mat-label>
-  <input matInput type="text" (keyup)="onUsernameChange($event)" placeholder="Username">
+  <input matInput type="text" [value]="username" (keyup)="onUsernameChange($event)" placeholder="Username">
+  <button *ngIf="isDefined(username)" matSuffix mat-icon-button aria-label="clear username" (click)="onClearUsername()">
+    <mat-icon>close</mat-icon>
+  </button>
 </mat-form-field>
