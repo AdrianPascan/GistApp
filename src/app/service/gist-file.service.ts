@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {HttpClient} from '@angular/common/http';
 import {HttpConstants} from '../utils/http-utils';
 
 @Injectable({
@@ -12,8 +12,6 @@ export class GistFileService {
   }
 
   getFileContent(url: string): Observable<string> {
-    const headers = new HttpHeaders()
-      .set(HttpConstants.CONTENT_TYPE, HttpConstants.TEXT_CONTENT_TYPE);
-    return this.httpClient.get<string>(url, {headers});
+    return this.httpClient.get(url, {responseType: HttpConstants.TEXT_RESPONSE_TYPE});
   }
 }

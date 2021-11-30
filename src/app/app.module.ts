@@ -19,6 +19,7 @@ import {GistFilePreviewComponent} from './gist-file-preview/gist-file-preview.co
 import {MatChipsModule} from '@angular/material/chips';
 import {GistForkPreviewComponent} from './gist-fork-preview/gist-fork-preview.component';
 import {GistFileViewComponent} from './gist-file-view/gist-file-view.component';
+import {GistFileContentComponent} from './gist-file-content/gist-file-content.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import {GistFileViewComponent} from './gist-file-view/gist-file-view.component';
     GistPreviewComponent,
     GistFilePreviewComponent,
     GistForkPreviewComponent,
-    GistFileViewComponent
+    GistFileViewComponent,
+    GistFileContentComponent
   ],
   imports: [
     BrowserModule,
