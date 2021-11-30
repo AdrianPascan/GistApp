@@ -15,8 +15,12 @@ export class GistService {
   constructor(private httpClient: HttpClient) {
   }
 
-  getGistsForUser(username: string): Observable<Gist[]> {
-    return this.httpClient.get<Gist[]>(`${GistService.BASE_URL}/users/${username}/gists`);
+  getGistsPageForUser(username: string, page: number, perPage: number): Observable<Gist[]> {
+    const params = new HttpParams()
+      .set(HttpConstants.PAGE_PARAM, page.toString())
+      .set(HttpConstants.PER_PAGE_PARAM, perPage.toString());
+    const options = {params};
+    return this.httpClient.get<Gist[]>(`${GistService.BASE_URL}/users/${username}/gists`, options);
   }
 
   getGistForks(gistId: string, forkCount: number): Observable<Gist[]> {

@@ -1,4 +1,7 @@
 <h2>Gist {{id}}</h2>
-<ng-container *ngFor="let file of files">
-  <app-gist-file-content [file]="file"></app-gist-file-content>
+<mat-card *ngIf="isArrayEmpty(files)">
+  No files...
+</mat-card>
+<ng-container *ngIf="isArrayNotEmpty(files)" >
+  <app-gist-file-content *ngFor="let file of files" [file]="file"></app-gist-file-content>
 </ng-container>

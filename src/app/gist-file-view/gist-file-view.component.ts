@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {GistFile} from '../model/gist-file';
 import {GistFileService} from '../service/gist-file.service';
+import {isArrayEmpty, isArrayNotEmpty} from '../utils/utils';
 
 @Component({
   selector: 'app-gist-file-view',
@@ -9,6 +10,9 @@ import {GistFileService} from '../service/gist-file.service';
   styleUrls: ['./gist-file-view.component.scss']
 })
 export class GistFileViewComponent implements OnInit {
+
+  readonly isArrayEmpty = isArrayEmpty;
+  readonly isArrayNotEmpty = isArrayNotEmpty;
 
   id: string;
   files: GistFile[];
@@ -20,13 +24,6 @@ export class GistFileViewComponent implements OnInit {
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id');
     this.files = history.state.files;
-  }
-
-  getFileContent(file: GistFile): string {
-    let fileContent = '';
-    this.gistFileService.getFileContent(file.raw_url)
-      .subscribe(content => fileContent = content);
-    return fileContent;
   }
 
 }

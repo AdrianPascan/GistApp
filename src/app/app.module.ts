@@ -20,6 +20,7 @@ import {MatChipsModule} from '@angular/material/chips';
 import {GistForkPreviewComponent} from './gist-fork-preview/gist-fork-preview.component';
 import {GistFileViewComponent} from './gist-file-view/gist-file-view.component';
 import {GistFileContentComponent} from './gist-file-content/gist-file-content.component';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import {GistFileContentComponent} from './gist-file-content/gist-file-content.co
     MatInputModule,
     HttpClientModule,
     MatCardModule,
-    MatChipsModule
+    MatChipsModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -2,3 +2,11 @@
 <ng-container *ngFor="let gist of gists">
   <app-gist-preview [gist]="gist"></app-gist-preview>
 </ng-container>
+<div>
+  <button mat-fab color="primary" [disabled]="!prevPage" (click)="getPrevPage()">
+    <mat-icon>navigate_before</mat-icon>
+  </button>
+  <button mat-fab color="primary" [disabled]="!nextPage" (click)="getNextPage()">
+    <mat-icon>navigate_next</mat-icon>
+  </button>
+</div>
